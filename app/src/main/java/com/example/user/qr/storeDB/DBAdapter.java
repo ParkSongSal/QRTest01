@@ -119,13 +119,13 @@ public class DBAdapter extends SQLiteOpenHelper {
     }
 
     // delete
-    public boolean deleteMemo(int id) {
+    public boolean deleteStore(int id) {
         String[] params = new String[] { Integer.toString(id) };
         int result = db.delete(TABLE_NAME, ID + "=?", params);
         return result > 0;
     }
 
-    public boolean deleteAll() {
+    public boolean deleteStore() {
         int result=db.delete(TABLE_NAME, null, null);
         return result > 0;
     }

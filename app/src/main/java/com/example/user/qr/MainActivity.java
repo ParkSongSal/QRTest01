@@ -6,6 +6,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -83,8 +84,31 @@ public class MainActivity extends AppCompatActivity implements ListAdapter.ListB
             }
         });
 
+        //리스트뷰 클릭시 삭제
+        listview.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            public boolean onItemLongClick(AdapterView<?> parent, View view,
+                                           final int position, long id) {
 
-    }
+                AlertDialog diaBox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Delete")
+                        .setMessage("정말로 삭제하시겠습니까?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                Store i = storelist.get(position);
+                                mDb.deleteStore(i.getId());
+                                refreshList();
+                            }
+                        })
+                        .setNegativeButton("No", null)
+                        .create();
+                diaBox.show();
+
+                return false;
+            }
+        });
+    } //on create 종료
+
+
 
     private void refreshList() {
         storelist.clear();
