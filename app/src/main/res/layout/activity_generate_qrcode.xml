@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.qr.GenerateQRcode">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/Qrname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="가게명을 입력하세요."
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"/>
+        <EditText
+            android:id="@+id/QrAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="간단한 주소를 입력하세요."
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            />
+        <Button
+            android:id="@+id/GenerateBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="10dp"
+            android:text="Qr코드 생성하기"
+            />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
