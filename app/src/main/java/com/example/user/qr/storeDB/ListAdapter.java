@@ -81,13 +81,8 @@ public class ListAdapter extends BaseAdapter implements View.OnClickListener {
         Button WorkBtn = (Button) v.findViewById(R.id.WorkBtn);
         WorkBtn.setTag(i);
         WorkBtn.setOnClickListener(this);
-
-        //ImageTxt.setImageBitmap(storelist.get(i).getImage());
         TitleTxt.setText(storelist.get(i).getTitle());
         AddressTxt.setText(storelist.get(i).getAddress());
-        //WorkTxt.setText(storelist.get(i).getWork());
-       //LeaveTxt.setText(storelist.get(i).getLeave());
-
 
         v.setTag(storelist.get(i).getTitle());
         return v;
@@ -96,8 +91,7 @@ public class ListAdapter extends BaseAdapter implements View.OnClickListener {
 
 
     public void onClick(View v) {
-        if (this.listBtnClickListener != null)
-        {
+        if (this.listBtnClickListener != null){
             this.listBtnClickListener.onListBtnClick((int)v.getTag());
         }
     }
