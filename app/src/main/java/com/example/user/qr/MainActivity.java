@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.user.qr.listviewexample.ListActivity;
 import com.example.user.qr.storeDB.DBAdapter;
 import com.example.user.qr.storeDB.ListAdapter;
 
@@ -47,7 +48,12 @@ public class MainActivity extends AppCompatActivity implements ListAdapter.ListB
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        findViewById(R.id.btn_activity_main_about).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ListActivity.class));
+            }
+        });
 
         date=(TextView) findViewById(R.id.date);
         date.setText(formatDate); // TextView 에 현재 시간 문자열 할당

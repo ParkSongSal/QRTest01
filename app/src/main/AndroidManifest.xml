@@ -24,7 +24,7 @@
         <activity android:name=".WorkerRegister" />
         <activity android:name=".ScanActivity" />
         <activity android:name=".GenerateQRcode" />
-        <activity android:name=".ListItem" />
+        <activity android:name=".listviewexample.ListActivity" />
         <activity android:name=".GenerateList"></activity>
     </application>
 
